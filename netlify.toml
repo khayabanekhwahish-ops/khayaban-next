@@ -1,3 +1,9 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+[build.environment]
+  # This is a static export (output: 'export'), so we want plain static
+  # hosting + Netlify Forms, not Netlify's auto-installed Next.js Runtime
+  # (which serves everything through Functions and swallows form POSTs).
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
