@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getFounder, getGallery, getTeamMembers, urlFor } from '@/lib/sanity'
+import { getFounder, getCoFounder, getGallery, getTeamMembers, urlFor } from '@/lib/sanity'
 
 export const metadata = {
   title: 'About Khayaban-e-Khwahish | Mission, Vision & Team',
@@ -13,8 +13,9 @@ export const metadata = {
 }
 
 export default async function AboutPage() {
-  const [founder, miniGallery, teamMembers] = await Promise.all([
+  const [founder, coFounder, miniGallery, teamMembers] = await Promise.all([
     getFounder(),
+    getCoFounder(),
     getGallery('about-mini'),
     getTeamMembers(),
   ])
@@ -73,6 +74,32 @@ export default async function AboutPage() {
               ))}
               <div className="founder-qualities" aria-label="Leadership qualities">
                 {(founder.qualities || []).map((q) => (
+                  <span key={q}>{q}</span>
+                ))}
+              </div>
+            </article>
+          </div>
+        </section>
+      )}
+
+      {coFounder && (
+        <section className="section founder-section">
+          <div className="container founder-feature">
+            <div className="founder-photo reveal">
+              <img
+                src={coFounder.photo ? urlFor(coFounder.photo).width(1100).height(670).url() : '/assets/img/avatar-placeholder.svg'}
+                alt={coFounder.photo ? `${coFounder.name}, Co-Founder of Khayaban-e-Khwahish` : 'Photo not yet added'}
+              />
+            </div>
+            <article className="founder-copy reveal">
+              <span className="section-label">Co-Founder &amp; leadership</span>
+              <h2>{coFounder.name}</h2>
+              <p className="founder-role">{coFounder.role}</p>
+              {(coFounder.bio || []).map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+              <div className="founder-qualities" aria-label="Leadership qualities">
+                {(coFounder.qualities || []).map((q) => (
                   <span key={q}>{q}</span>
                 ))}
               </div>
