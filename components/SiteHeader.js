@@ -22,6 +22,7 @@ function currentKey(pathname) {
 export default function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const active = currentKey(pathname)
 
   useEffect(() => {
@@ -29,8 +30,14 @@ export default function SiteHeader() {
   }, [pathname])
 
   useEffect(() => {
+    let ticking = false
     const onScroll = () => {
-      document.getElementById('site-header')?.classList.toggle('scrolled', window.scrollY > 20)
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 100)
+        ticking = false
+      })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -39,14 +46,18 @@ export default function SiteHeader() {
   return (
     <>
       <a className="skip-link" href="#main">Skip to main content</a>
-      <div className="announcement">
-        <div className="container announcement-inner">
-          <span>Student-led. Transparent. Community-powered.</span>
-          <Link href="/suggestions">Share a community need <Icon name="idea" size={16} /></Link>
+      <div className={`announcement-collapsible${scrolled ? ' is-collapsed' : ''}`}>
+        <div className="announcement-collapsible-inner">
+          <div className="announcement">
+            <div className="container announcement-inner">
+              <span>Student-led. Transparent. Community-powered.</span>
+              <Link href="/suggestions">Share a community need <Icon name="idea" size={16} /></Link>
+            </div>
+          </div>
         </div>
       </div>
-      <header className="site-header" id="site-header">
-        <div className="header-brand-row container">
+      <header className={`site-header${scrolled ? ' scrolled' : ''}`} id="site-header">
+        <div className={`header-brand-row container${scrolled ? ' is-compact' : ''}`}>
           <button
             className="menu-toggle"
             aria-expanded={open}
@@ -56,15 +67,17 @@ export default function SiteHeader() {
           >
             <Icon name={open ? 'x' : 'menu'} />
           </button>
-          <Link className="brand brand-centered" href="/" aria-label="Khayaban-e-Khwahish home">
-            <span className="brand-logo-frame">
-              <img src="/assets/img/logo-clean-transparent.png" alt="Khayaban-e-Khwahish logo" />
-            </span>
-            <span className="brand-title">
-              <strong>Khayaban-e-Khwahish</strong>
-              <small>An Avenue to Ambition</small>
-            </span>
-          </Link>
+          <div className="brand-collapsible">
+            <Link className="brand brand-centered" href="/" aria-label="Khayaban-e-Khwahish home">
+              <span className="brand-logo-frame">
+                <img src="/assets/img/logo-clean-transparent.png" alt="Khayaban-e-Khwahish logo" />
+              </span>
+              <span className="brand-title">
+                <strong>Khayaban-e-Khwahish</strong>
+                <small>An Avenue to Ambition</small>
+              </span>
+            </Link>
+          </div>
           <span className="header-spacer" aria-hidden="true"></span>
         </div>
         <div className="header-nav-bar">
