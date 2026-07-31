@@ -23,7 +23,6 @@ export const metadata = {
     'fundraising',
   ],
   authors: [{ name: 'Khayaban-e-Khwahish' }],
-  icons: { icon: '/assets/img/logo-clean-transparent.png' },
   openGraph: {
     siteName: 'Khayaban-e-Khwahish',
     type: 'website',
