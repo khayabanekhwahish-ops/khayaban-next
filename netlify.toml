@@ -1,5 +1,8 @@
 [build]
-  command = "npm run build"
+  # Clear any cached .next/cache first: Next.js persists fetched data across
+  # builds for incremental-build speed, which otherwise serves stale Sanity
+  # content after a Studio edit even though this is a fresh static export.
+  command = "rm -rf .next/cache && npm run build"
   publish = "out"
 
 [build.environment]

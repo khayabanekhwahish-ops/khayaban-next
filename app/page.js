@@ -49,7 +49,7 @@ export default async function HomePage() {
               <div className="mosaic-card mosaic-c"><img src="/assets/img/flood-relief-new.jpg" alt="Flood relief team" /></div>
               <div className="mosaic-card mosaic-d"><img src="/assets/img/iftar_2026.jpg" alt="Community meal distribution" /></div>
             </div>
-            <div className="floating-card one"><strong>8</strong><span>Documented projects</span></div>
+            <div className="floating-card one"><strong>10</strong><span>Documented projects</span></div>
             <div className="floating-card two"><strong>4,600</strong><span>Iftar meals distributed</span></div>
             <div className="hero-seal">Donate<br />with trust</div>
           </div>

@@ -268,10 +268,10 @@ const settings = {
   instagram: '@khayabanekhwahish',
   instagramUrl: 'https://instagram.com/khayabanekhwahish',
   metrics: [
-    { label: 'Documented projects', value: '8' },
+    { label: 'Documented projects', value: '10' },
     { label: 'Active volunteers', value: '20+' },
     { label: 'Iftar meals distributed', value: '4,600', barPercent: 100 },
-    { label: 'Rashan bags delivered', value: '150', barPercent: 70 },
+    { label: 'Rashan bags delivered', value: '200', barPercent: 70 },
     { label: 'Flood relief packages', value: '40', barPercent: 38 },
     { label: 'Masjid fans installed', value: '18', barPercent: 24 },
   ],
