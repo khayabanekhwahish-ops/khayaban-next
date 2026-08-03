@@ -87,7 +87,7 @@ p{margin:0 0 1em}
 .section-heading h2{margin-top:12px;max-width:760px}
 .section-heading p{max-width:530px;color:var(--muted);margin:0}
 
-.hero{padding:74px 0 90px;position:relative;overflow:hidden;background:radial-gradient(circle at left top,rgba(218,197,147,.30),transparent 30%),linear-gradient(180deg,#fffdf8 0%,#f8f2e7 100%)}
+.hero{padding:74px 0 90px;position:relative;overflow:hidden;background:radial-gradient(circle at left top,rgba(218,197,147,.30),transparent 30%),linear-gradient(180deg,#FBE7C5 0%,#FBE7C5 100%)}
 .hero::after{content:"";position:absolute;inset:auto 0 0;height:220px;background:url('/assets/img/road-strip.jpg') center bottom/cover no-repeat;opacity:.12;pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:64px;position:relative;z-index:1}
 .hero-copy{padding:18px 0}
@@ -167,7 +167,7 @@ p{margin:0 0 1em}
 .cta-band{padding:74px 0;background:linear-gradient(135deg,var(--green),var(--green-dark));color:#fff}
 .cta-band-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}
 
-.page-hero{padding:84px 0 74px;background:radial-gradient(circle at right top,rgba(197,138,23,.12),transparent 25%), linear-gradient(145deg,var(--soft-2),#fffdf8);border-bottom:1px solid var(--line)}
+.page-hero{padding:84px 0 74px;background:radial-gradient(circle at right top,rgba(197,138,23,.12),transparent 25%), linear-gradient(145deg,var(--soft-2),#FBE7C5);border-bottom:1px solid var(--line)}
 .page-hero-grid{grid-template-columns:1fr .72fr}
 .page-hero h1{margin:16px 0 18px;font-size:clamp(3rem,5.7vw,5.5rem)}
 .page-hero-card{padding:30px;border-radius:26px;background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;box-shadow:var(--shadow)}
@@ -471,7 +471,7 @@ p{margin:0 0 1em}
 }
 .nav-tab.active .nav-tab-icon{background:var(--green);color:#fff}
 
-.founder-section{background:linear-gradient(180deg,#fffdf8 0%,#f6efe3 100%)}
+.founder-section{background:linear-gradient(180deg,#FBE7C5 0%,#FBE7C5 100%)}
 .founder-feature{
   display:grid;
   grid-template-columns:.92fr 1.08fr;
