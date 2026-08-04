@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 670" role="img" aria-label="Photo not yet added">
-  <rect width="1100" height="670" fill="#f7f1e5" />
-  <circle cx="550" cy="270" r="110" fill="#ded6c6" />
-  <path d="M330 560c40-140 160-210 220-210s180 70 220 210" fill="#ded6c6" />
-  <text x="550" y="610" text-anchor="middle" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="26" font-weight="700" fill="#5f6d66">Photo coming soon</text>
+  <rect width="1100" height="670" fill="#ffffff" />
+  <circle cx="550" cy="335" r="270" fill="#9b9ea3" />
+  <circle cx="550" cy="245" r="95" fill="#f7f7f8" />
+  <path d="M370 490c30-105 110-160 180-160s150 55 180 160c-45 55-115 90-180 90s-135-35-180-90z" fill="#f7f7f8" />
 </svg>
