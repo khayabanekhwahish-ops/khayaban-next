@@ -641,6 +641,9 @@ p{margin:0 0 1em}
 
 .header-top-banner{padding:0}
 .header-top-banner-image{display:block;width:100%;height:auto;border-radius:0;box-shadow:none}
+@media (max-width:680px){
+  .header-top-banner-image{height:200px;object-fit:cover;object-position:center}
+}
 
 .brand-banner{display:flex;align-items:center;justify-content:center}
 .brand-banner-frame{display:block;padding:8px 16px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm)}
