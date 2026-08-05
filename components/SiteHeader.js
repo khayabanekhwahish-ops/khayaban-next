@@ -49,15 +49,13 @@ export default function SiteHeader() {
       <div className={`announcement-collapsible${scrolled ? ' is-collapsed' : ''}`}>
         <div className="announcement-collapsible-inner">
           <div className="header-top-banner">
-            <div className="container">
-              <Link href="/" aria-label="Khayaban-e-Khwahish home">
-                <img
-                  className="header-top-banner-image"
-                  src="/assets/img/header-banner.png"
-                  alt="Khayaban-e-Khwahish, An Avenue to Ambition"
-                />
-              </Link>
-            </div>
+            <Link href="/" aria-label="Khayaban-e-Khwahish home">
+              <img
+                className="header-top-banner-image"
+                src="/assets/img/header-banner.png"
+                alt="Khayaban-e-Khwahish, An Avenue to Ambition"
+              />
+            </Link>
           </div>
         </div>
       </div>

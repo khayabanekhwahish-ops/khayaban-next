@@ -639,14 +639,8 @@ p{margin:0 0 1em}
 .header-nav-wrap{position:relative}
 .header-nav-wrap .menu-toggle{position:static!important;right:auto!important;top:auto!important}
 
-.header-top-banner{padding:14px 0}
-.header-top-banner-image{display:block;width:100%;max-width:1100px;margin:0 auto;border-radius:20px;box-shadow:var(--shadow-sm)}
-@media (max-width:940px){
-  .header-top-banner{padding:10px 0}
-}
-@media (max-width:680px){
-  .header-top-banner{padding:8px 0}
-}
+.header-top-banner{padding:0}
+.header-top-banner-image{display:block;width:100%;height:auto;border-radius:0;box-shadow:none}
 
 .brand-banner{display:flex;align-items:center;justify-content:center}
 .brand-banner-frame{display:block;padding:8px 16px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm)}
