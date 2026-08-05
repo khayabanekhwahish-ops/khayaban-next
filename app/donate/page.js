@@ -10,6 +10,7 @@ export const metadata = {
     description:
       'Support Khayaban-e-Khwahish projects and submit a donation confirmation for finance follow-up.',
   },
+  alternates: { canonical: '/donate' },
 }
 
 export default function DonatePage() {

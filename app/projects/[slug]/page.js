@@ -19,7 +19,9 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${project.title} | Khayaban-e-Khwahish`,
       description: project.summary,
+      images: project.image ? [urlFor(project.image).width(1200).height(630).url()] : undefined,
     },
+    alternates: { canonical: `/projects/${slug}` },
   }
 }
 

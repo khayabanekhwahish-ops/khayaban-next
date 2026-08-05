@@ -5,6 +5,7 @@ export const metadata = {
     title: 'Volunteer | Khayaban-e-Khwahish',
     description: 'Join Khayaban-e-Khwahish as a volunteer and support community projects across Pakistan.',
   },
+  alternates: { canonical: '/volunteer' },
 }
 
 const OPPORTUNITIES = [

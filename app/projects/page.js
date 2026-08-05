@@ -12,6 +12,7 @@ export const metadata = {
     description:
       'Explore Khayaban-e-Khwahish projects including food support, community welfare, child welfare, fundraising and emergency relief initiatives.',
   },
+  alternates: { canonical: '/projects' },
 }
 
 export default async function ProjectsPage() {

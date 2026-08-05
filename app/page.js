@@ -12,6 +12,7 @@ export const metadata = {
     description:
       'Khayaban-e-Khwahish is a student-led nonprofit in Pakistan. Explore authentic projects, support fundraising, volunteer and suggest community needs.',
   },
+  alternates: { canonical: '/' },
 }
 
 export default async function HomePage() {

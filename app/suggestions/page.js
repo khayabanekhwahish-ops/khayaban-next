@@ -11,6 +11,7 @@ export const metadata = {
     description:
       'Share a local problem or community need with Khayaban-e-Khwahish through the project suggestion form.',
   },
+  alternates: { canonical: '/suggestions' },
 }
 
 export default function SuggestionsPage() {

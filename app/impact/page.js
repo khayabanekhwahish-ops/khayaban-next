@@ -11,6 +11,7 @@ export const metadata = {
     description:
       'View impact figures, project outcomes and transparency commitments from Khayaban-e-Khwahish.',
   },
+  alternates: { canonical: '/impact' },
 }
 
 export default async function ImpactPage() {

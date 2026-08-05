@@ -10,6 +10,7 @@ export const metadata = {
     description:
       'Learn about Khayaban-e-Khwahish, Founder Murtaza Saquib, its mission, values, team and authentic humanitarian work in Pakistan.',
   },
+  alternates: { canonical: '/about' },
 }
 
 export default async function AboutPage() {
