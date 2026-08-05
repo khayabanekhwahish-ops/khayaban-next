@@ -68,13 +68,9 @@ export default function SiteHeader() {
             <Icon name={open ? 'x' : 'menu'} />
           </button>
           <div className="brand-collapsible">
-            <Link className="brand brand-centered" href="/" aria-label="Khayaban-e-Khwahish home">
-              <span className="brand-logo-frame">
-                <img src="/assets/img/logo-clean-transparent.png" alt="Khayaban-e-Khwahish logo" />
-              </span>
-              <span className="brand-title">
-                <strong>Khayaban-e-Khwahish</strong>
-                <small>An Avenue to Ambition</small>
+            <Link className="brand brand-banner" href="/" aria-label="Khayaban-e-Khwahish home">
+              <span className="brand-banner-frame">
+                <img src="/assets/img/header-banner.png" alt="Khayaban-e-Khwahish, An Avenue to Ambition" />
               </span>
             </Link>
           </div>

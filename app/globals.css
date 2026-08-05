@@ -630,3 +630,15 @@ p{margin:0 0 1em}
   transition:max-height .3s ease-in-out,opacity .3s ease-in-out;
 }
 .header-brand-row.is-compact .brand-collapsible{max-height:0;opacity:0}
+
+.brand-banner{display:flex;align-items:center;justify-content:center}
+.brand-banner-frame{display:block;padding:8px 16px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm)}
+.brand-banner-frame img{display:block;height:84px;width:auto;max-width:100%;border-radius:10px}
+@media (max-width:940px){
+  .brand-banner-frame{padding:6px 12px}
+  .brand-banner-frame img{height:68px}
+}
+@media (max-width:680px){
+  .brand-banner-frame{padding:5px 10px}
+  .brand-banner-frame img{height:54px}
+}
