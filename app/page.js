@@ -22,16 +22,6 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="hero hero-banner-section">
-        <div className="container">
-          <img
-            className="hero-banner-image reveal"
-            src="/assets/img/header-banner.png"
-            alt="Khayaban-e-Khwahish, An Avenue to Ambition"
-          />
-        </div>
-      </section>
-
       <section className="metric-strip" aria-label="Impact at a glance">
         <div className="container"><MetricsGrid metrics={metrics} /></div>
       </section>

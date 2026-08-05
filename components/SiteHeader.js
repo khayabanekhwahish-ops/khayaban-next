@@ -48,40 +48,31 @@ export default function SiteHeader() {
       <a className="skip-link" href="#main">Skip to main content</a>
       <div className={`announcement-collapsible${scrolled ? ' is-collapsed' : ''}`}>
         <div className="announcement-collapsible-inner">
-          <div className="announcement">
-            <div className="container announcement-inner">
-              <span>Student-led. Transparent. Community-powered.</span>
-              <Link href="/suggestions">Share a community need <Icon name="idea" size={16} /></Link>
+          <div className="header-top-banner">
+            <div className="container">
+              <Link href="/" aria-label="Khayaban-e-Khwahish home">
+                <img
+                  className="header-top-banner-image"
+                  src="/assets/img/header-banner.png"
+                  alt="Khayaban-e-Khwahish, An Avenue to Ambition"
+                />
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <header className={`site-header${scrolled ? ' scrolled' : ''}`} id="site-header">
-        <div className={`header-brand-row container${scrolled ? ' is-compact' : ''}`}>
-          <button
-            className="menu-toggle"
-            aria-expanded={open}
-            aria-controls="primary-nav"
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            onClick={() => setOpen((o) => !o)}
-          >
-            <Icon name={open ? 'x' : 'menu'} />
-          </button>
-          <div className="brand-collapsible">
-            <Link className="brand brand-centered" href="/" aria-label="Khayaban-e-Khwahish home">
-              <span className="brand-logo-frame">
-                <img src="/assets/img/logo-clean-transparent.png" alt="Khayaban-e-Khwahish logo" />
-              </span>
-              <span className="brand-title">
-                <strong>Khayaban-e-Khwahish</strong>
-                <small>An Avenue to Ambition</small>
-              </span>
-            </Link>
-          </div>
-          <span className="header-spacer" aria-hidden="true"></span>
-        </div>
         <div className="header-nav-bar">
           <div className="container header-nav-wrap">
+            <button
+              className="menu-toggle"
+              aria-expanded={open}
+              aria-controls="primary-nav"
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              onClick={() => setOpen((o) => !o)}
+            >
+              <Icon name={open ? 'x' : 'menu'} />
+            </button>
             <nav id="primary-nav" className={`primary-nav${open ? ' open' : ''}`} aria-label="Primary navigation">
               {NAV.map(([key, label, href, iconName]) => (
                 <Link key={key} className={`nav-tab${active === key ? ' active' : ''}`} href={href}>
