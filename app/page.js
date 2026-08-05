@@ -22,38 +22,13 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="hero">
-        <div className="container hero-grid">
-          <div className="hero-copy reveal">
-            <span className="kicker">An avenue to ambition</span>
-            <h1>Building impact. <em>Creating hope.</em></h1>
-            <p className="lead">Khayaban-e-Khwahish is a student-led nonprofit supporting underprivileged communities across Pakistan through food assistance, relief work, community welfare and youth-led volunteerism.</p>
-            <div className="hero-badge-row">
-              <span className="hero-badge">Authentic project portfolio</span>
-              <span className="hero-badge">Only organization-supplied images</span>
-              <span className="hero-badge">Transparent impact focus</span>
-            </div>
-            <div className="button-row">
-              <Link className="button button-donate" href="/donate">Support a project <span aria-hidden="true">♥</span></Link>
-              <Link className="button button-ghost" href="/projects">Explore our work</Link>
-              <Link className="text-link" href="/suggestions">Suggest a community need →</Link>
-            </div>
-            <div className="hero-trust">
-              <div className="avatar-stack" aria-hidden="true"><span>KK</span><span>20+</span><span>PK</span></div>
-              <span>Powered by volunteers, donors and community partners.</span>
-            </div>
-          </div>
-          <div className="hero-visual reveal">
-            <div className="photo-mosaic">
-              <div className="mosaic-card mosaic-a"><img src="/assets/img/team-who-we-are.jpg" alt="Khayaban-e-Khwahish team group" /></div>
-              <div className="mosaic-card mosaic-b"><img src="/assets/img/rashan.jpg" alt="Rashan project supplies" /></div>
-              <div className="mosaic-card mosaic-c"><img src="/assets/img/flood-relief-new.jpg" alt="Flood relief team" /></div>
-              <div className="mosaic-card mosaic-d"><img src="/assets/img/iftar_2026.jpg" alt="Community meal distribution" /></div>
-            </div>
-            <div className="floating-card one"><strong>10</strong><span>Documented projects</span></div>
-            <div className="floating-card two"><strong>4,600</strong><span>Iftar meals distributed</span></div>
-            <div className="hero-seal">Donate<br />with trust</div>
-          </div>
+      <section className="hero hero-banner-section">
+        <div className="container">
+          <img
+            className="hero-banner-image reveal"
+            src="/assets/img/header-banner.png"
+            alt="Khayaban-e-Khwahish, An Avenue to Ambition"
+          />
         </div>
       </section>
 
