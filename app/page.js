@@ -17,7 +17,7 @@ export const metadata = {
 
 export default async function HomePage() {
   const [projects, settings] = await Promise.all([getProjects(), getSettings()])
-  const featured = projects.slice(0, 4)
+  const featured = projects.slice(-4).reverse()
   const metrics = settings?.metrics || []
 
   return (
