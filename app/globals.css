@@ -25,7 +25,7 @@
   --container:1180px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-anchor:none}
 body{margin:0;font-family:'Plus Jakarta Sans',Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);background:#FBE7C5;line-height:1.68;-webkit-font-smoothing:antialiased}
 body.no-scroll{overflow:hidden}
 a{color:inherit;text-decoration:none}
@@ -616,15 +616,21 @@ p{margin:0 0 1em}
   .brand-logo-frame{width:76px;height:76px}
 }
 
-/* Collapsing announcement bar + logo on scroll (nav bar stays sticky).
-   overflow-anchor:none stops the browser's automatic scroll-position
-   compensation from fighting our own scroll-driven collapse animation,
-   which is what caused the page to visibly shake/jitter. */
-.announcement-collapsible{display:grid;grid-template-rows:1fr;transition:grid-template-rows .3s ease-in-out;overflow-anchor:none}
+/* Collapsing top banner on scroll (nav bar stays sticky).
+   The fade (opacity, on -inner) and the space-reclaiming layout change
+   (grid-template-rows, on the outer wrapper) are deliberately decoupled and
+   the layout change has NO transition of its own — it's driven by JS to snap
+   instantly only after the fade has finished. Animating a layout-affecting
+   property (grid-template-rows/max-height) continuously over hundreds of
+   frames is what caused the page to visibly shake: it forces a layout
+   recalculation on every frame, which fights with the browser's own
+   scroll-position/scroll-anchoring logic. A one-time instant snap has no
+   such window to fight in. overflow-anchor:none is kept as a second safety
+   net against the browser's automatic scroll-position compensation. */
+.announcement-collapsible{display:grid;grid-template-rows:1fr;overflow-anchor:none}
 .announcement-collapsible.is-collapsed{grid-template-rows:0fr}
-.announcement-collapsible-inner{overflow:hidden}
-.announcement{transition:transform .3s ease-in-out,opacity .3s ease-in-out}
-.announcement-collapsible.is-collapsed .announcement{transform:translateY(-16px);opacity:0}
+.announcement-collapsible-inner{overflow:hidden;opacity:1;transition:opacity .3s ease-in-out}
+.announcement-collapsible-inner.is-faded{opacity:0}
 
 .header-brand-row{transition:min-height .3s ease-in-out,padding .3s ease-in-out;overflow-anchor:none}
 .header-brand-row.is-compact{min-height:0!important;padding-top:0!important;padding-bottom:0!important}

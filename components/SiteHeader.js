@@ -22,7 +22,14 @@ function currentKey(pathname) {
 export default function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  // `scrolled` drives the opacity fade only (no layout impact, so it can
+  // animate continuously during scroll with zero risk of feedback jank).
+  // `heightCollapsed` drives the actual space-reclaiming layout change, and
+  // only flips *after* the fade has already finished making it invisible —
+  // that turns 300 frames of layout recalculation into a single instant one,
+  // which is what actually caused the scroll position to shake/fight itself.
   const [scrolled, setScrolled] = useState(false)
+  const [heightCollapsed, setHeightCollapsed] = useState(false)
   const active = currentKey(pathname)
 
   useEffect(() => {
@@ -49,23 +56,31 @@ export default function SiteHeader() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (scrolled) {
+      const t = setTimeout(() => setHeightCollapsed(true), 300)
+      return () => clearTimeout(t)
+    }
+    setHeightCollapsed(false)
+  }, [scrolled])
+
   return (
     <>
       <a className="skip-link" href="#main">Skip to main content</a>
-      <div className={`announcement-collapsible${scrolled ? ' is-collapsed' : ''}`}>
-        <div className="announcement-collapsible-inner">
-          <div className="header-top-banner">
-            <Link href="/" aria-label="Khayaban-e-Khwahish home">
-              <img
-                className="header-top-banner-image"
-                src="/assets/img/header-banner.png"
-                alt="Khayaban-e-Khwahish, An Avenue to Ambition"
-              />
-            </Link>
+      <header className={`site-header${scrolled ? ' scrolled' : ''}`} id="site-header">
+        <div className={`announcement-collapsible${heightCollapsed ? ' is-collapsed' : ''}`}>
+          <div className={`announcement-collapsible-inner${scrolled ? ' is-faded' : ''}`}>
+            <div className="header-top-banner">
+              <Link href="/" aria-label="Khayaban-e-Khwahish home">
+                <img
+                  className="header-top-banner-image"
+                  src="/assets/img/header-banner.png"
+                  alt="Khayaban-e-Khwahish, An Avenue to Ambition"
+                />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-      <header className={`site-header${scrolled ? ' scrolled' : ''}`} id="site-header">
         <div className="header-nav-bar">
           <div className="container header-nav-wrap">
             <button
