@@ -627,7 +627,7 @@ p{margin:0 0 1em}
    scroll-position/scroll-anchoring logic. A one-time instant snap has no
    such window to fight in. overflow-anchor:none is kept as a second safety
    net against the browser's automatic scroll-position compensation. */
-.announcement-collapsible{display:grid;grid-template-rows:1fr;overflow-anchor:none}
+.announcement-collapsible{display:grid;grid-template-rows:1fr;overflow-anchor:none;transition:grid-template-rows .3s ease-in-out}
 .announcement-collapsible.is-collapsed{grid-template-rows:0fr}
 .announcement-collapsible-inner{overflow:hidden;opacity:1;transition:opacity .3s ease-in-out}
 .announcement-collapsible-inner.is-faded{opacity:0}
