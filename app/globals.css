@@ -616,14 +616,17 @@ p{margin:0 0 1em}
   .brand-logo-frame{width:76px;height:76px}
 }
 
-/* Collapsing announcement bar + logo on scroll (nav bar stays sticky) */
-.announcement-collapsible{display:grid;grid-template-rows:1fr;transition:grid-template-rows .3s ease-in-out}
+/* Collapsing announcement bar + logo on scroll (nav bar stays sticky).
+   overflow-anchor:none stops the browser's automatic scroll-position
+   compensation from fighting our own scroll-driven collapse animation,
+   which is what caused the page to visibly shake/jitter. */
+.announcement-collapsible{display:grid;grid-template-rows:1fr;transition:grid-template-rows .3s ease-in-out;overflow-anchor:none}
 .announcement-collapsible.is-collapsed{grid-template-rows:0fr}
 .announcement-collapsible-inner{overflow:hidden}
 .announcement{transition:transform .3s ease-in-out,opacity .3s ease-in-out}
 .announcement-collapsible.is-collapsed .announcement{transform:translateY(-16px);opacity:0}
 
-.header-brand-row{transition:min-height .3s ease-in-out,padding .3s ease-in-out}
+.header-brand-row{transition:min-height .3s ease-in-out,padding .3s ease-in-out;overflow-anchor:none}
 .header-brand-row.is-compact{min-height:0!important;padding-top:0!important;padding-bottom:0!important}
 .header-brand-row .brand-collapsible{
   grid-column:2;
@@ -632,6 +635,7 @@ p{margin:0 0 1em}
   max-height:180px;
   opacity:1;
   overflow:hidden;
+  overflow-anchor:none;
   transition:max-height .3s ease-in-out,opacity .3s ease-in-out;
 }
 .header-brand-row.is-compact .brand-collapsible{max-height:0;opacity:0}
@@ -639,7 +643,7 @@ p{margin:0 0 1em}
 .header-nav-wrap{position:relative}
 .header-nav-wrap .menu-toggle{position:static!important;right:auto!important;top:auto!important}
 
-.header-top-banner{padding:0}
+.header-top-banner{padding:0;overflow-anchor:none}
 .header-top-banner-image{display:block;width:100%;height:auto;border-radius:0;box-shadow:none}
 @media (max-width:680px){
   .header-top-banner-image{height:200px;object-fit:cover;object-position:center}

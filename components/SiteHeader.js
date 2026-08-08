@@ -35,7 +35,13 @@ export default function SiteHeader() {
       if (ticking) return
       ticking = true
       requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 100)
+        // Hysteresis (different enter/exit thresholds) so hovering right at one
+        // scroll position can't flip the collapsed state back and forth, which
+        // is what caused the shaking/jitter.
+        setScrolled((prev) => {
+          if (prev) return window.scrollY > 70
+          return window.scrollY > 130
+        })
         ticking = false
       })
     }
